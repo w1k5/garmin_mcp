@@ -592,6 +592,14 @@
       "description": "Quick-add a food entry with macro values to the nutrition log"
     },
     {
+      "name": "log_menstrual_mood",
+      "description": "Add Garmin menstrual mood categories without removing existing daily details."
+    },
+    {
+      "name": "log_menstrual_symptoms",
+      "description": "Add symptoms or moods to a Garmin menstrual daily log, preserving existing entries."
+    },
+    {
       "name": "push_workout_to_device",
       "description": "Send a workout from the workout library to a Garmin device"
     },
@@ -658,6 +666,10 @@
     {
       "name": "set_heart_rate_zones",
       "description": "Set an account-level heart-rate training-zone configuration for one sport."
+    },
+    {
+      "name": "set_menstrual_sex_drive",
+      "description": "Set Garmin's Sex Drive field for one day, preserving other daily details."
     },
     {
       "name": "set_nutrition_daily_settings",

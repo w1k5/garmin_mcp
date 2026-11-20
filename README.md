@@ -1224,3 +1224,7 @@ If you are working from a local checkout or fork:
 ```bash
 uv tool install --python 3.12 --force C:\Users\aresd\Desktop\programacion\garmin_mcp
 ```
+
+## Oracle Cloud deployment
+
+A single-user Oracle Cloud deployment with HTTPS, ChatGPT OAuth, and menstrual log write tools is documented in [`deploy/oracle/README.md`](deploy/oracle/README.md).

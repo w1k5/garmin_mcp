@@ -1,0 +1,21 @@
+[Unit]
+Description=Personal Garmin MCP server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/garmin-mcp/app
+EnvironmentFile=/etc/garmin-mcp.env
+ExecStart=/opt/garmin-mcp/app/.venv/bin/python /opt/garmin-mcp/app/deploy/oracle/hosted.py
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/srv/garmin-mcp/data
+
+[Install]
+WantedBy=multi-user.target

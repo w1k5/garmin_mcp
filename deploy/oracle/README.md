@@ -49,6 +49,14 @@ The existing Garmin server remains the upstream project. This deployment is an o
 
 The MCP endpoint is `https://YOUR_HOSTNAME/mcp`. The server supports OAuth dynamic client registration with the `garmin.personal` scope. During ChatGPT approval, enter the **server access key** from `/etc/garmin-mcp.env` into the **Server access key** field. This is separate from Garmin credentials. Never paste the key into a chat or commit it.
 
+On the VM, retrieve the key with:
+
+```sh
+sudo sed -n 's/^MCP_API_KEY=//p' /etc/garmin-mcp.env
+```
+
+Copy the output directly into ChatGPT's **Server access key** field. Anyone with this key can authorize access to your Garmin data, so keep it private and avoid saving it in shell history or screenshots.
+
 The server offers read and write tools, including `set_menstrual_sex_drive(date, sex_drive)` with `LOW`, `AVERAGE`, or `HIGH`. This tool preserves other fields in the day's menstrual log and reads the saved value back. Client apps may cache their tool list; reconnect or start a new chat after deploying new tools.
 
 ## Update the existing VM

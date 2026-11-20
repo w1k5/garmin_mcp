@@ -2,6 +2,8 @@
 
 This directory adds a single-user Oracle Cloud deployment to the original [Taxuspt/garmin_mcp](https://github.com/Taxuspt/garmin_mcp) project. It includes a ChatGPT OAuth layer, a Caddy HTTPS proxy, systemd services, and menstrual log write tools. The fork retains the original history and license.
 
+This is an independent, unofficial fork. It is not affiliated with Garmin or maintained by the upstream project.
+
 ## What changed in this fork
 
 - Upgraded `garminconnect` to 0.3.19 for menstrual daily-log writes.
@@ -20,7 +22,7 @@ The existing Garmin server remains the upstream project. This deployment is an o
    ```sh
    sudo mkdir -p /opt/garmin-mcp
    sudo chown ubuntu:ubuntu /opt/garmin-mcp
-   git clone YOUR_PRIVATE_REPOSITORY_URL /opt/garmin-mcp/app
+   git clone https://github.com/w1k5/garmin_mcp.git /opt/garmin-mcp/app
    ```
 
 4. Run setup with the public hostname (without `https://`):
@@ -30,7 +32,7 @@ The existing Garmin server remains the upstream project. This deployment is an o
    bash deploy/oracle/setup.sh YOUR_HOSTNAME
    ```
 
-   Setup installs the locked Python environment, overlays the patched Garmin client and MCP modules, creates protected runtime directories and a random 64-character server key, installs systemd services, and starts HTTPS. If `/etc/garmin-mcp.env` already exists, it keeps the existing key.
+   Setup installs the locked Python environment, creates protected runtime directories and a random 64-character server key, installs systemd services, and starts HTTPS. If `/etc/garmin-mcp.env` already exists, it keeps the existing key. Review the script before running it because it writes system configuration and starts services with `sudo`.
 
 5. Sign in to Garmin on the VM as `ubuntu`:
 
